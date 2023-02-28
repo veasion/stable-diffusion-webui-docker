@@ -13,6 +13,6 @@ docker run -d --gpus all --name stable-diffusion-webui -p 9999:9999 -v /stable-d
 
 # bash
 docker exec -it stable-diffusion-webui bash
-python launch.py --skip-torch-cuda-test --precision full --port 9999 --listen --api --xformers --enable-insecure-extension-access
+python launch.py --skip-torch-cuda-test --precision full --port 9999 --no-half --listen --api --xformers --enable-insecure-extension-access
 
 ```
