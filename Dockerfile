@@ -1,8 +1,7 @@
 # docker build -t veasion/stable-diffusion-webui .
-# docker run --gpus all -p 9999:9999 -v /stable-diffusion-webui/models:/sd/models/ --rm -it veasion/stable-diffusion-webui bash
-# python launch.py --listen --port 9999
-
-# docker run -d --gpus all --name stable-diffusion-webui --network host -v /stable-diffusion-webui/models:/sd/models -v /stable-diffusion-webui/outputs:/sd/outputs -v /stable-diffusion-webui/extensions:/sd/extensions --rm veasion/stable-diffusion-webui bash webui.sh --skip-torch-cuda-test --precision full --port 9999 --listen --api --xformers --enable-insecure-extension-access
+# docker run -d --gpus all --name stable-diffusion-webui -p 9999:9999 -v /stable-diffusion-webui/models:/sd/models -v /stable-diffusion-webui/outputs:/sd/outputs -v /stable-diffusion-webui/extensions:/sd/extensions veasion/stable-diffusion-webui
+# docker exec -it stable-diffusion-webui bash
+# python launch.py --skip-torch-cuda-test --precision full --port 9999 --listen --api --xformers --enable-insecure-extension-access
 
 FROM nvidia/cuda:11.4.1-runtime-ubuntu20.04
 
